@@ -18,10 +18,14 @@ api = tweepy.API(auth)
 # 自分のタイムラインを取得
 timeline = api.home_timeline(count=100)
 
+now = datetime.datetime.today()
+today = now.date()
+
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
-    fp.write(tweet.text + "\n")
+    if today == tweet.created_at.date():
+        fp.write(tweet.text + "\n")
 fp.close()
 
 # 外部コマンドの実行には `os.system()` を使う
