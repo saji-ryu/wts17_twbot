@@ -24,7 +24,7 @@ now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
-    if now < tweet.created_at:
+    if now > tweet.created_at:
         fp.write(tweet.text + "\n")
 fp.close()
 
