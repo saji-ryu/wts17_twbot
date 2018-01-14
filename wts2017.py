@@ -16,7 +16,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # 自分のタイムラインを取得
-timeline = api.home_timeline(count=10)
+timeline = api.home_timeline(count=100)
 
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
