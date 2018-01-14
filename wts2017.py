@@ -19,7 +19,7 @@ api = tweepy.API(auth)
 timeline = api.home_timeline(count=10)
 
 # タイムラインのテキストをoutput.txtに書き出し
-fp = codecs.open('output.txt', 'w', 'euc-jp')
+fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     fp.write(tweet.text + "\n")
 fp.close()
