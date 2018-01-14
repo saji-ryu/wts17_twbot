@@ -19,7 +19,7 @@ api = tweepy.API(auth)
 # 自分のタイムラインを取得
 timeline = api.home_timeline(count=100)
 
-now = datetime.now().replace(, , , hour=0, minute=0, second=0, microsecond=0)
+now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
