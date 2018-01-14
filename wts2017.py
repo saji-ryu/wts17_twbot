@@ -19,12 +19,12 @@ api = tweepy.API(auth)
 # 自分のタイムラインを取得
 timeline = api.home_timeline(count=100)
 
-now = datetime.today().date()
+now = datetime.now().replace(year=self.year, month=self.month, day=self.day, hour=0, minute=0, second=0, microsecond=0)
 
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
-    if now == tweet.created_at.date():
+    if now < tweet.created_at.date():
         fp.write(tweet.text + "\n")
 fp.close()
 
