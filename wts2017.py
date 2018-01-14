@@ -24,13 +24,13 @@ for tweet in timeline:
     fp.write(tweet.text + "\n")
 fp.close()
 
-外部コマンドの実行には `os.system()` を使う
-ここでは `from os import system` を宣言済み
+# 外部コマンドの実行には `os.system()` を使う
+# ここでは `from os import system` を宣言済み
 system('chasen < output.txt > output.txt.chasen')
 
 dict = {}
 
-for line in codecs.open('output.txt.chasen','r','euc-jp'):
+for line in codecs.open('output.txt.chasen','r','utf-8'):
     line = line.rstrip('\r\n')
     if line == "EOS":
         pass
