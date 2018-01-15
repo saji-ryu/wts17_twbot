@@ -94,7 +94,7 @@ tweet_score.sort(key=lambda x:x[2],reverse=True)
 print tweet_score[0][1]
 
 
-text = '今日一番季節感があったのは'+tweet_score[0][1] + 'さんです'
+text = '今日一番季節感があったのは'+tweet_score[0][1].setdefaultencoding('utf8')+ 'さんです'
 
 print text
 
