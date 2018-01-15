@@ -42,6 +42,7 @@ tweet_score = []
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
+    # 今日の0:00よりも遅い投稿であるか見る
     if today_start < tweet.created_at:
         # 改行をなくして一文にする
         content = tweet.text
@@ -91,7 +92,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
 tweet_score.sort(key=lambda x:x[2],reverse=True)
 
 # ツイート文
-text = ''
+text = '今日の季節感あるtweetランキング!!'
 
 # 上位３つのツイートを表示する
 for i in range(3):
