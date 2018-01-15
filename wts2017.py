@@ -83,6 +83,8 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
 tweet_score.sort(key=lambda x:x[2],reverse=True)
 print tweet_score[0][1]
 
+text = ''
+
 for i in range(3):
     text += i + '位は' + tweet_score[i][1].encode('utf8') + 'さんでした　' + 'RT @' + tweet_score[i][3].encode('utf8') + ': ' + tweet_score[i][4].encode('utf8') + '\n'
 
