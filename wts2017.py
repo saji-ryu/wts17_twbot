@@ -118,10 +118,14 @@ text = '今日の季節感あるtweetランキング!!\n'
 for i in range(3):
     # みんな０点だったら
     if tweet_score[0][2] <= 0:
-        text += 'みなさん全然季節感がありませんね.......'
+        text = 'みなさん全然季節感がありませんね.......'
+        break
     # 順位とユーザー名、非公式引用リツイートの形で前半２０文字をリツイート
-    elif tweet_score[i][2] > 0:
+    elif tweet_score[i][2] > 0 and tweet_score[i][3] != 'wts2017_team13':
         text += str(i+1) + '位は' + tweet_score[i][1].encode('utf8') + 'さんでした　' + 'RT @' + tweet_score[i][3].encode('utf8') + ': ' + tweet_score[i][4].encode('utf8') + '\n'
+
+if text == '今日の季節感あるtweetランキング!!\n':
+    text = 'みなさん全然季節感がありませんね.......'
 
 # ログ
 print text
