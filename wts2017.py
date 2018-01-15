@@ -88,7 +88,7 @@ print tweet_score[0][1]
 text = ''
 
 for i in range(3):
-    if tweet_score[i][2] <= 0:
+    if tweet_score[0][2] <= 0:
         text += 'みなさん全然季節感がありませんね.......'
     elif tweet_score[i][2] > 0:
         text += str(i+1) + '位は' + tweet_score[i][1].encode('utf8') + 'さんでした　' + 'RT @' + tweet_score[i][3].encode('utf8') + ': ' + tweet_score[i][4].encode('utf8') + '\n'
