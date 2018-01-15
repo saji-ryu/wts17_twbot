@@ -44,7 +44,7 @@ for tweet in timeline:
         content = content.replace('\n','')
         content = content.replace('\r','')
         fp.write(content + "\n")
-		content_short = content[0:15] + '.......'
+        content_short = content[0:15] + '.......'
         tweet_score.append([tweet.id,tweet.user.name,0,tweet.user.screen_name,content_short])
 fp.close()
 
