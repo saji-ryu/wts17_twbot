@@ -17,11 +17,12 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # 自分のタイムラインを取得
-timeline = api.home_timeline(count=100)
+timeline = api.home_timeline(count=150)
 
 # その日の0:00を設定
 today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-jst = timedelta(hours=9)
+# 日本との時差
+tojst = timedelta(hours=9)
 
 # 各月における評価点の辞書
 point_rule = {}
@@ -43,10 +44,10 @@ tweet_score = []
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
-    tweet_time = tweet.created_at + jst
+    # tweet.created_atはUTCなのでJSTに変換
+    tweet_time = tweet.created_at + tojst
     # 今日の0:00よりも遅い投稿であるか見る
     if today_start < tweet_time:
-        print tweet_time,today_start,datetime.now()
         # 改行をなくして一文にする
         content = tweet.text
         content = content.replace('\n','')
@@ -87,7 +88,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
             tweet_score[tweet_count][2] = 0
             # print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
         # print pre
-        # print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
+        print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
         del pre[:]
         point = 0
         line_count = 0
