@@ -17,7 +17,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # 自分のタイムラインを取得
-timeline = api.home_timeline(count=100)
+timeline = api.home_timeline(count=1)
 
 today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -52,7 +52,7 @@ fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     if today_start < tweet.created_at:
         content = tweet.text
-        print(type(content))
+        print(content)
         content = content.rstrip('\r\n')
         fp.write(content + "\n")
         tweet_score.append([tweet.id,tweet.user.name,0])
@@ -78,7 +78,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
 
     line = line.rstrip('\r\n')
     if line == "EOS":
-        print count
+        # print count
         point = 0
         if count < len(tweet_score):
             count += 1
