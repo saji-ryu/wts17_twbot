@@ -71,7 +71,6 @@ for line in codecs.open('dict2.txt','r','utf-8'):
     dict[lis[0]] = lis[1]
 
 # ツイート内に季語があるか
-print len(tweet_score)
 count = 0
 point = 0
 for line in codecs.open('output.txt.chasen','r','utf-8'):
@@ -79,20 +78,17 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
     line = line.rstrip('\r\n')
     if line == "EOS":
         point = 0
-        # if count < len(tweet_score):
         count += 1
     else:
         lis = line.split("\t")
         # 季語の辞書にあった場合
         if lis[2] in dict:
-            print lis[2]
             # 現在のツイートに季語から判断した得点を追加
             tweet_score[count][2] += point_rule[dict[lis[2]]]
 
 
 # 点数順に並び替え
 tweet_score.sort(key=lambda x:x[2],reverse=True)
-# print tweet_score[0][1]
 
 # ツイート文
 text = ''
