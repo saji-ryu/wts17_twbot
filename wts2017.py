@@ -5,7 +5,7 @@ from passkey import *
 import codecs
 import re
 import tweepy
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 # Twitter OAuth
@@ -21,6 +21,7 @@ timeline = api.home_timeline(count=100)
 
 # その日の0:00を設定
 today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+jst = timedelta(hours=9)
 
 # 各月における評価点の辞書
 point_rule = {}
@@ -42,7 +43,7 @@ tweet_score = []
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
-    tweet_time = tweet.created_at.replace(hour=tweet.created_at.hour+9)
+    tweet_time = tweet.created_at + jst
     # 今日の0:00よりも遅い投稿であるか見る
     if today_start < tweet_time:
         print tweet_time,today_start,datetime.now()
