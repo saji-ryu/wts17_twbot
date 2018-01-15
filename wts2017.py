@@ -92,7 +92,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
 tweet_score.sort(key=lambda x:x[2],reverse=True)
 
 # ツイート文
-text = '今日の季節感あるtweetランキング!!'
+text = '今日の季節感あるtweetランキング!!\n'
 
 # 上位３つのツイートを表示する
 for i in range(3):
