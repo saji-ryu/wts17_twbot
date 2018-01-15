@@ -44,6 +44,7 @@ fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     # 今日の0:00よりも遅い投稿であるか見る
     if today_start < tweet.created_at:
+        print tweet.created_at
         # 改行をなくして一文にする
         content = tweet.text
         content = content.replace('\n','')
@@ -84,7 +85,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
             tweet_score[tweet_count][2] = 0
             # print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
         # print pre
-        print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
+        # print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
         del pre[:]
         point = 0
         line_count = 0
