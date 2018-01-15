@@ -116,7 +116,7 @@ text = '今日の季節感あるtweetランキング!!\n'
 rank = 1
 
 # 上位３つのツイートを表示する
-for i in range(len(tweet_score))
+for i in range(tweet_count)
     # みんな０点だったら
     if tweet_score[0][2] <= 0:
         text = 'みなさん全然季節感がありませんね.......'
