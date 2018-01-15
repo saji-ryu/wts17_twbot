@@ -55,7 +55,6 @@ for tweet in timeline:
         tweet_score.append([tweet.id,tweet.user.name,0])
 fp.close()
 
-print tweet_score
 
 # 外部コマンドの実行には `os.system()` を使う
 # ここでは `from os import system` を宣言済み
@@ -68,6 +67,7 @@ for line in codecs.open('dict.txt','r','utf-8'):
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
 
+print dict
 # count = 0
 # for line in codecs.open('output.txt.chasen','r','utf-8'):
 #     point = 0
