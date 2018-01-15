@@ -17,7 +17,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # 自分のタイムラインを取得
-timeline = api.home_timeline(count=150)
+timeline = api.home_timeline(count=100)
 
 # その日の0:00を設定
 today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
