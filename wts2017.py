@@ -83,7 +83,7 @@ tweet_score.sort(key=lambda x:x[2],reverse=True)
 print tweet_score[0][1]
 
 
-text = tweet_score[0][1].encode('utf8') + 'さんでした' + "\n" + tweet_score[0][3]
+text = tweet_score[0][1].encode('utf8') + 'さんでした' + "\n" + tweet_score[0][3].encode('utf8')
 
 print text
 
