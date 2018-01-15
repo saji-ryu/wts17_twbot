@@ -23,16 +23,27 @@ today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 point_rule = {}
 
+# if today_start.month <= 2:
+#     point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
+# elif today_start.month <= 5:
+#     point_rule = {"spring":3, "summer":1, "autumn":-3, "winter":1}
+# elif today_start.month <= 8:
+#     point_rule = {"spring":1, "summer":3, "autumn":1, "winter":-3}
+# elif today_start.month <= 11:
+#     point_rule = {"spring":-3, "summer":1, "autumn":3, "winter":1}
+# else:
+#     point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
+
 if today_start.month <= 2:
-    point_rule = {"春":1, "夏":-3, "秋":1, "冬":3}
+    point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
 elif today_start.month <= 5:
-    point_rule = {"春":3, "夏":1, "秋":-3, "冬":1}
+    point_rule = {"spring":3, "summer":1, "autumn":-3, "winter":1}
 elif today_start.month <= 8:
-    point_rule = {"春":1, "夏":3, "秋":1, "冬":-3}
+    point_rule = {"spring":1, "summer":3, "autumn":1, "winter":-3}
 elif today_start.month <= 11:
-    point_rule = {"春":-3, "夏":1, "秋":3, "冬":1}
+    point_rule = {"spring":-3, "summer":1, "autumn":3, "winter":1}
 else:
-    point_rule = {"春":1, "夏":-3, "秋":1, "冬":3}
+    point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
 
 tweet_score = []
 

@@ -1,7 +1,7 @@
-雪	冬
-寒い	冬
-かじかむ	冬
-悴む	冬
-暑い	夏
-桜	春
-紅葉	秋
+雪	winter
+寒い	winter
+かじかむ	winter
+悴む	winter
+暑い	summer
+桜	spring
+紅葉	atutumn
