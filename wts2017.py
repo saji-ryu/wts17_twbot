@@ -41,7 +41,7 @@ fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     if today_start < tweet.created_at:
         fp.write(tweet.text + "\n")
-        tweet_score.append[tweet.id,tweet.user.name,0]
+        tweet_score.append([tweet.id,tweet.user.name,0])
 fp.close()
 
 # 外部コマンドの実行には `os.system()` を使う
