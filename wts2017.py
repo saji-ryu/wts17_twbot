@@ -45,7 +45,7 @@ for tweet in timeline:
     tweet_time = tweet.created_at.replace(hour=tweet.created_at.hour+9)
     # 今日の0:00よりも遅い投稿であるか見る
     if today_start < tweet_time:
-        print tweet.created_at
+        print tweet_time
         # 改行をなくして一文にする
         content = tweet.text
         content = content.replace('\n','')
