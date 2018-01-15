@@ -52,7 +52,7 @@ fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     if today_start < tweet.created_at:
         content = tweet.text
-        content = content.rstrip()
+        content = content.rstrip('\r\n')
         fp.write(content + "\n")
         tweet_score.append([tweet.id,tweet.user.name,0])
 fp.close()
@@ -65,7 +65,7 @@ system('chasen < output.txt > output.txt.chasen')
 
 dict = {}
 for line in codecs.open('dict.txt','r','utf-8'):
-    line = line.rstrip('\r\n')
+    line = line.rstrip()
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
 
