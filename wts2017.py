@@ -23,17 +23,6 @@ today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 point_rule = {}
 
-# if today_start.month <= 2:
-#     point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
-# elif today_start.month <= 5:
-#     point_rule = {"spring":3, "summer":1, "autumn":-3, "winter":1}
-# elif today_start.month <= 8:
-#     point_rule = {"spring":1, "summer":3, "autumn":1, "winter":-3}
-# elif today_start.month <= 11:
-#     point_rule = {"spring":-3, "summer":1, "autumn":3, "winter":1}
-# else:
-#     point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
-
 if today_start.month <= 2:
     point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
 elif today_start.month <= 5:
@@ -65,7 +54,7 @@ system('chasen < output.txt > output.txt.chasen')
 
 
 dict = {}
-for line in codecs.open('dict.txt','r','utf-8'):
+for line in codecs.open('dict2.txt','r','utf-8'):
     line = line.rstrip()
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
