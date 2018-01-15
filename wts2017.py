@@ -67,23 +67,24 @@ for line in codecs.open('dict.txt','r','utf-8'):
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
 
+print tweet_score[0][2]
 
 count = 0
 point = 0
-for line in codecs.open('output.txt.chasen','r','utf-8'):
-
-    line = line.rstrip('\r\n')
-    if line == "EOS":
-        tweet_score[count][2] = point
-        point = 0
-        count += 1
-    else:
-        lis = line.split("\t")
-        if lis[2] in dict:
-            point += point_rule[dict[lis[2]]]
-
-tweet_score.sort(key=lambda x:x[2],reverse=True)
-print tweet_score
+# for line in codecs.open('output.txt.chasen','r','utf-8'):
+#
+#     line = line.rstrip('\r\n')
+#     if line == "EOS":
+#         tweet_score[count][2] = point
+#         point = 0
+#         count += 1
+#     else:
+#         lis = line.split("\t")
+#         if lis[2] in dict:
+#             point += point_rule[dict[lis[2]]]
+#
+# tweet_score.sort(key=lambda x:x[2],reverse=True)
+# print tweet_score
 
 
 
