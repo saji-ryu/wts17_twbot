@@ -65,7 +65,7 @@ system('chasen < output.txt > output.txt.chasen')
 
 dict = {}
 for line in codecs.open('dict.txt','r','utf-8'):
-    line = line.rstrip()
+    line = line.rstrip('\r\n')
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
 
