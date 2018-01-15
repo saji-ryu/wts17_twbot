@@ -83,7 +83,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
         if noun_count/line_count > 0.8:
             tweet_score[tweet_count][2] = 0
             print tweet_score[tweet_count][3]
-        pre.clear()
+        del pre[:]
         point = 0
         line_count = 0
         noun_count = 0
