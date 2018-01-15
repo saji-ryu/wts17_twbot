@@ -44,7 +44,7 @@ for tweet in timeline:
         content = content.replace('\n','')
         content = content.replace('\r','')
         fp.write(content + "\n")
-        tweet_score.append([tweet.id,tweet.user.name,0])
+        tweet_score.append([tweet.id,tweet.user.name,0,tweet.user.url])
 fp.close()
 
 
@@ -83,14 +83,14 @@ tweet_score.sort(key=lambda x:x[2],reverse=True)
 print tweet_score[0][1]
 
 
-text = '今日一番季節感があったのは'+tweet_score[0][1].encode('utf8')+ 'さんです'
+text = tweet_score[0][1].encode('utf8') + 'さんでした' + "\n" + tweet_score[0][3]
 
 print text
 
-try:
-    api.update_status(status=text)
-except tweepy.TweepError as e:
-    print e
+# try:
+#     api.update_status(status=text)
+# except tweepy.TweepError as e:
+#     print e
 
 
 
