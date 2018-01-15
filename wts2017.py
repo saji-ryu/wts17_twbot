@@ -83,7 +83,8 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
         if noun_count/line_count > 0.8:
             tweet_score[tweet_count][2] = 0
             # print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
-        print pre[].encode('utf8')
+        # print pre
+        print tweet_score[tweet_count][3],tweet_score[tweet_count][4]
         del pre[:]
         point = 0
         line_count = 0
@@ -101,6 +102,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
         if re.search(ur'名詞',lis[3]):
             noun_count += 1
 
+print tweet_count
 
 # 点数順に並び替え
 tweet_score.sort(key=lambda x:x[2],reverse=True)
