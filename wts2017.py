@@ -42,8 +42,9 @@ tweet_score = []
 # タイムラインのテキストをoutput.txtに書き出し
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
+    tweet_time = tweet.created_at.replace(hour=tweet.created_at.hour+9)
     # 今日の0:00よりも遅い投稿であるか見る
-    if today_start < tweet.created_at:
+    if today_start < tweet_time:
         print tweet.created_at
         # 改行をなくして一文にする
         content = tweet.text
