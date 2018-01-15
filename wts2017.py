@@ -75,7 +75,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
 
     line = line.rstrip('\r\n')
     if line == "EOS":
-        # print tweet_score[count][2]
+        print tweet_score[count][2]
         point = 0
         if count < len(tweet_score):
             count += 1
