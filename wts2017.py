@@ -72,24 +72,32 @@ for line in codecs.open('dict2.txt','r','utf-8'):
     dict[lis[0]] = lis[1]
 
 # ツイート内に季語があるか
-count = 0
+line_count = 0
+noun_count = 0
+tweet_count = 0
 point = 0
 pre = []
 for line in codecs.open('output.txt.chasen','r','utf-8'):
-
     line = line.rstrip('\r\n')
     if line == "EOS":
+        if noun_count/line_count > 0.8:
+            tweet_score[tweet_count][2] = 0
         pre = []
         point = 0
-        count += 1
+        line_count = 0
+        noun_count = 0
+        tweet_count += 1
     else:
+        line_count += 1
         lis = line.split("\t")
         # 季語の辞書にあった場合
-        if lis[2] in dict:
-            if lis[2] not in pre:
-                # 現在のツイートに季語から判断した得点を追加
-                tweet_score[count][2] += point_rule[dict[lis[2]]]
-                pre.append[lis[2]]
+        if lis[2] in dict and lis[2] not in pre:
+            # 現在のツイートに季語から判断した得点を追加
+            tweet_score[tweet_count][2] += point_rule[dict[lis[2]]]
+            pre.append(lis[2])
+        # 名詞の数をカウント
+        if re.search(ur'名詞',lis[3]):
+            noun_count += 1
 
 
 # 点数順に並び替え
