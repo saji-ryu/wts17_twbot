@@ -119,7 +119,7 @@ for i in range(3):
 print text
 
 # 投稿
-try:
-    api.update_status(status=text)
-except tweepy.TweepError as e:
-    print e
+# try:
+#     api.update_status(status=text)
+# except tweepy.TweepError as e:
+#     print e
