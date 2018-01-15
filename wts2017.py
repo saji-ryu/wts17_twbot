@@ -65,9 +65,10 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
         count += 1
     else:
         lis = line.split("\t")
-        if lis[3] in dict:
-            point += point_rule[dict[lis[3]]]
+        if lis[2] in dict:
+            point += point_rule[dict[lis[2]]]
 
-
-for x in sorted(tweet_score.items(), key=lambda x:x[2], reverse=True):
-    print x[0], x[1],x[2]
+tweet_score.sort(key=lambda x:x[],reverse=True)
+print tweet_score
+# for x in sorted(tweet_score.items(), key=lambda x:x[2], reverse=True):
+#     print x[0], x[1],x[2]
