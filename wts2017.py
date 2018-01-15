@@ -81,6 +81,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
     else:
         lis = line.split("\t")
         if lis[2] in dict:
+            print lis[2]
             tweet_score[count][2] += point
             # point += point_rule[dict[lis[2]]]
 
