@@ -86,7 +86,7 @@ print tweet_score[0][1]
 text = ''
 
 for i in range(3):
-    text += i + '位は' + tweet_score[i][1].encode('utf8') + 'さんでした　' + 'RT @' + tweet_score[i][3].encode('utf8') + ': ' + tweet_score[i][4].encode('utf8') + '\n'
+    text += str(i) + '位は' + tweet_score[i][1].encode('utf8') + 'さんでした　' + 'RT @' + tweet_score[i][3].encode('utf8') + ': ' + tweet_score[i][4].encode('utf8') + '\n'
 
 # text = tweet_score[0][1].encode('utf8') + 'さんでした' + "\n" + 'RT @' + tweet_score[0][3].encode('utf8') + ': ' + tweet_score[0][4].encode('utf8')
 
