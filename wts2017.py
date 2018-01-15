@@ -98,10 +98,10 @@ text = '今日一番季節感があったのは'+tweet_score[0][1].encode('utf8'
 
 print text
 
-# try:
-#     api.update_status(status=text)
-# except tweepy.TweepError as e:
-#     print e
+try:
+    api.update_status(status=text)
+except tweepy.TweepError as e:
+    print e
 
 
 
