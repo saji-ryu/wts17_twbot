@@ -66,7 +66,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
     else:
         lis = line.split("\t")
         if lis[3] in dict:
-            point += point_rule[dict[1]]
+            point += point_rule[dict[lis[3]]]
 
 
 for x in sorted(tweet_score.items(), key=lambda x:x[2], reverse=True):
