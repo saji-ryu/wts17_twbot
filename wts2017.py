@@ -97,10 +97,10 @@ for i in range(3):
 
 print text
 
-# try:
-#     api.update_status(status=text)
-# except tweepy.TweepError as e:
-#     print e
+try:
+    api.update_status(status=text)
+except tweepy.TweepError as e:
+    print e
 
 
 
