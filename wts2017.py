@@ -51,7 +51,9 @@ tweet_score = []
 fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     if today_start < tweet.created_at:
-        fp.write(tweet.text + "\n")
+        content = tweet.text
+        content = content.rstrip()
+        fp.write(content + "\n")
         tweet_score.append([tweet.id,tweet.user.name,0])
 fp.close()
 
