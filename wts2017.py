@@ -67,7 +67,7 @@ for line in codecs.open('dict.txt','r','utf-8'):
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
 
-print dict
+print tweet_score[10][2]
 # count = 0
 # for line in codecs.open('output.txt.chasen','r','utf-8'):
 #     point = 0
