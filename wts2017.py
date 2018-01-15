@@ -80,7 +80,7 @@ for line in codecs.open('output.txt.chasen','r','utf-8'):
     if line == "EOS":
         point = 0
         # if count < len(tweet_score):
-            count += 1
+        count += 1
     else:
         lis = line.split("\t")
         # 季語の辞書にあった場合
