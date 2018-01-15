@@ -68,14 +68,14 @@ for line in codecs.open('dict.txt','r','utf-8'):
     dict[lis[0]] = lis[1]
 
 # print tweet_score[0][2]
-
+print len(tweet_score)
 count = 0
 point = 0
 for line in codecs.open('output.txt.chasen','r','utf-8'):
 
     line = line.rstrip('\r\n')
     if line == "EOS":
-        print tweet_score[count][2]
+        print count
         point = 0
         if count < len(tweet_score):
             count += 1
