@@ -132,6 +132,7 @@ rank = 1
 
 # 上位３つのツイートを表示する
 for i in range(len(tweet_score)):
+	print tweet_score[i][2]
     # みんな０点だったら
     if tweet_score[0][2] <= 0:
         text = 'みなさん全然季節感がありませんね.......'
