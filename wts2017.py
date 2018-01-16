@@ -19,24 +19,41 @@ api = tweepy.API(auth)
 # 自分のタイムラインを取得
 timeline = api.home_timeline(count=150)
 
-# その日の0:00を設定
-today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+one_day = timedelta(days=1)
+
+# 呼び出された時の丸一日前の時点を取得
+day_start = datetime.now() - one_day
 # 日本との時差
 tojst = timedelta(hours=9)
 
 # 各月における評価点の辞書
 point_rule = {}
 
-if today_start.month <= 2:
-    point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
-elif today_start.month <= 5:
-    point_rule = {"spring":3, "summer":1, "autumn":-3, "winter":1}
-elif today_start.month <= 8:
-    point_rule = {"spring":1, "summer":3, "autumn":1, "winter":-3}
-elif today_start.month <= 11:
-    point_rule = {"spring":-3, "summer":1, "autumn":3, "winter":1}
-else:
-    point_rule = {"spring":1, "summer":-3, "autumn":1, "winter":3}
+if day_start.month == 1:
+    point_rule = {"spring":0, "summer":-5, "autumn":0, "winter":5}
+elif day_start.month == 2:
+    point_rule = {"spring":0, "summer":-5, "autumn":-1, "winter":4}
+elif day_start.month == 3:
+    point_rule = {"spring":2, "summer":-4, "autumn":-3, "winter":3}
+elif day_start.month == 4:
+    point_rule = {"spring":5, "summer":0, "autumn":-5, "winter":0}
+elif day_start.month == 5:
+    point_rule = {"spring":5, "summer":0, "autumn":-3, "winter":0}
+elif day_start.month == 6:
+    point_rule = {"spring":3, "summer":3, "autumn":0, "winter":-2}
+elif day_start.month == 7:
+    point_rule = {"spring":0, "summer":5, "autumn":0, "winter":-4}
+elif day_start.month == 8:
+    point_rule = {"spring":0, "summer":5, "autumn":2, "winter":-5}
+elif day_start.month == 9:
+    point_rule = {"spring":-4, "summer":2, "autumn":5, "winter":-4}
+elif day_start.month == 10:
+    point_rule = {"spring":-5, "summer":0, "autumn":5, "winter":0}
+elif day_start.month == 11:
+    point_rule = {"spring":-4, "summer":-3, "autumn":3, "winter":1}
+elif day_start.month == 12:
+    point_rule = {"spring":-1, "summer":-5, "autumn":0, "winter":4}
+
 
 # 各ツイートの情報を保持する配列
 tweet_score = []
@@ -46,8 +63,8 @@ fp = codecs.open('output.txt', 'w', 'utf-8')
 for tweet in timeline:
     # tweet.created_atはUTCなのでJSTに変換
     tweet_time = tweet.created_at + tojst
-    # 今日の0:00よりも遅い投稿であるか見る
-    if today_start < tweet_time:
+    # スタートよりも遅い投稿であるか見る
+    if day_start < tweet_time:
         # 改行をなくして一文にする
         content = tweet.text
         content = content.replace('\n','')
@@ -134,7 +151,7 @@ if text == '今日の季節感あるtweetランキング!!\n':
 print text
 
 # 投稿
-try:
-    api.update_status(status=text)
-except tweepy.TweepError as e:
-    print e
+# try:
+#     api.update_status(status=text)
+# except tweepy.TweepError as e:
+#     print e
