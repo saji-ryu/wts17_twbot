@@ -1,0 +1,2 @@
+MAILTO=""
+0 0 * * * /usr/bin/python /home/t15443rs/wts/wts17_twbot/wts2017.py
