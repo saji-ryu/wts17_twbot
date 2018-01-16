@@ -132,13 +132,12 @@ rank = 1
 
 # 上位３つのツイートを表示する
 for i in range(len(tweet_score)):
-    print tweet_score[i][2]
     # みんな０点だったら
     if tweet_score[0][2] <= 0:
         text = 'みなさん全然季節感がありませんね.......'
         break
     # 表示は３位まで
-    if rank > 4:
+    if rank > 3:
         break
     # 順位とユーザー名、非公式引用リツイートの形で前半２０文字をリツイート
     elif tweet_score[i][2] > 0 and tweet_score[i][3] != 'wts2017_team13':
