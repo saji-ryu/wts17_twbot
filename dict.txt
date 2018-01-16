@@ -414,7 +414,7 @@
 ひぐらし	autumn
 うすばかげろう	autumn
 くつわむし	autumn
-とんぼ　autumn
+とんぼ	autumn
 蜻蛉	autumn
 松虫	autumn
 まつむし	autumn
