@@ -87,7 +87,7 @@ system('chasen < output.txt > output.txt.chasen')
 
 # 季語の辞書を読み込み
 dict = {}
-for line in codecs.open('dict2.txt','r','utf-8'):
+for line in codecs.open('dict.txt','r','utf-8'):
     line = line.rstrip()
     lis = line.split("\t")
     dict[lis[0]] = lis[1]
@@ -151,7 +151,7 @@ if text == '今日の季節感あるtweetランキング!!\n':
 print text
 
 # 投稿
-# try:
-#     api.update_status(status=text)
-# except tweepy.TweepError as e:
-#     print e
+try:
+    api.update_status(status=text)
+except tweepy.TweepError as e:
+    print e
