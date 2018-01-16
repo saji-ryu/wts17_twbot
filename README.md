@@ -10,5 +10,16 @@
 - cron(linux)
 - chasen
 
+## 動作方法
+1. wts2017.pyと同じディレクトリ内にpasskey.pyというファイルを作り、取得したAPI関連のキーを以下のように記述
+  ```python:passkey.py
+  # -*- coding: utf-8 -*-
+  consumer_key        = 'xxxxxxxxxxxxxxxx'
+  consumer_secret     = 'xxxxxxxxxxxxxxxx'
+  access_token        = 'xxxxxxxxxxxxxxxx'
+  access_token_secret = 'xxxxxxxxxxxxxxxx'
+  ```
+2. `$ crontab cron.schedule`
+
 ## リンク
 https://twitter.com/wts2017_team13?lang=ja
