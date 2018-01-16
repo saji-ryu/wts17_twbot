@@ -600,3 +600,12 @@ ORF	autumn
 青山祭	autumn
 早稲田祭	autumn
 理大祭	autumn
+わらびもち	spring
+草餅	spring
+桜餅	spring
+入学	spring
+入学試験	spring
+遠足	spring
+進級	spring
+鰆	spring
+新歓	spring
